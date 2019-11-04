@@ -32,7 +32,7 @@ export default class Callphone extends LightningElement {
             if(this.Contact.Phone.value){
                 this.contactPhones.push({value: this.Contact.Phone.value});
             }
-            if(this.Contact.MobilePhone.value){
+            if(this.Contact.MobilePhone.value){ 
                 this.contactPhones.push({value: this.Contact.MobilePhone.value});
             }
             if(this.Contact.HomePhone.value){
