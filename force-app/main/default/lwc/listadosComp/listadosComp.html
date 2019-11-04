@@ -1,0 +1,31 @@
+<!--
+  @File Name          : listadosComp.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 26/9/2019 12:17:49
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    23/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_12-of-12 slds-box slds-gutters">
+            <span><lightning-button variant="neutral" label="Servicios en Curso" title="Servicios en Curso" onclick={handleClick} class="slds-align_absolute-center"></lightning-button></span>
+        </div>
+        <br/>
+        <div class="slds-col slds-size_12-of-12 slds-box slds-gutters">
+            <span><lightning-button variant="neutral" label="Servicios Cerrados" title="Servicios Cerrados" onclick={handleClick} class="slds-align_absolute-center"></lightning-button></span>
+        </div>
+        <br/>
+        <div class="slds-col slds-size_12-of-12 slds-box slds-gutters">
+            <span><lightning-button variant="neutral" label="Citas Futuras" title="Citas Futuras" onclick={handleClick} class="slds-align_absolute-center"></lightning-button></span>
+        </div>
+        <br/>
+        <div class="slds-col slds-size_12-of-12 slds-box slds-gutters">
+            <span><lightning-button variant="neutral" label="Citas Hoy (7)" title="Citas Hoy" onclick={handleClick} class="slds-align_absolute-center"></lightning-button></span>
+        </div>
+        <br/>
+    </div> 
+</template>

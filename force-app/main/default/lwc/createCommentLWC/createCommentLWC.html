@@ -1,0 +1,32 @@
+<!--
+  @File Name          : createCommentLWC.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 25/9/2019 12:53:24
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    23/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <lightning-textarea name="Comentario" label="Introduce tu comentario" ></lightning-textarea>
+        <div class="slds-grid slds-grid_align-end">
+            <template if:true={showCancel}>
+                <lightning-layout-item padding="around-small" class="slds-col" >    
+                        <lightning-button variant="destructive" 
+                            onclick={handleCancel}
+                            name="cancel" 
+                            label="Cancelar">
+                        </lightning-button>
+                </lightning-layout-item>
+            </template>
+            <lightning-layout-item padding="around-small" class="slds-col" >    
+                <lightning-button variant="brand" 
+                    type="submit" 
+                    name="save" 
+                    label="Guardar">
+                </lightning-button>
+            </lightning-layout-item>
+        </div>
+</template>

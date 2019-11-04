@@ -1,0 +1,21 @@
+<!--
+  @File Name          : redirectToCalendar.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 23/9/2019 12:31:30
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    23/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<aura:component implements="force:lightningQuickAction,force:hasRecordId">
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    <aura:attribute name="url" type="String"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:attribute name="recordId" type="String" />
+    
+    <lightning:spinner />
+    <lightning:navigation aura:id="navService"/>
+</aura:component>

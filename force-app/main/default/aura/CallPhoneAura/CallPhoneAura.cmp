@@ -1,0 +1,16 @@
+<!--
+  @File Name          : CallPhoneAura.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 30/9/2019 10:37:34
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    27/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>  
+  <lightning:quickActionAPI aura:id="quickActionAPI" />  
+  <c:callphone saId="{!v.recordId}" oncallphone="{!c.logcall}"></c:callphone>
+</aura:component>

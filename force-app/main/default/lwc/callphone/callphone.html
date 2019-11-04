@@ -1,0 +1,21 @@
+<!--
+  @File Name          : callphone.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 28/9/2019 12:54:31
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    27/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+        {name}
+    </h2>
+    <template for:each={contactPhones} for:item='item'>
+      <p key={item.id}>
+        <lightning-formatted-phone value={item.value} onclick={phoneclick}></lightning-formatted-phone>
+      </p>
+    </template>
+</template>

@@ -1,0 +1,37 @@
+<!--
+  @File Name          : fullCalendarLWC.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ismael.ocana@s4g.es
+  @Last Modified On   : 16/10/2019 16:51:32
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    30/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <lightning-card title="Calendario" icon-name="custom:custom98">
+      <div class="slds-box">
+        <div class="slds-grid slds-wrap">
+          <div class="slds-large-size_6-of-12 slds-small-size--1-of-3">
+              <lightning-input onchange={handleUrgenteChange} type="toggle" label = "Urgente" name="Urgentes" value={checkUrgente}></lightning-input>
+          </div>
+          <div class="slds-large-size_6-of-12 slds-small-size--2-of-3">
+            <template if:true={showCombo}>
+                <lightning-combobox
+                name="Creación"
+                label="Creación"
+                value={valueOptions}
+                placeholder="Selecciona que quieres crear"
+                options={opcionesCreacion}
+                onchange={handleChangeCreacion} >
+              </lightning-combobox>
+            </template>
+          </div>
+        </div>
+        <lightning-button label="Buscar" variant="inverse" onclick={buscar}></lightning-button> 
+      </div>
+      <div class="fullCalendar" lwc:dom="manual"></div>
+    </lightning-card>
+    <c-full-calendar-modal show-modal={showModal} obj-to-create={valueOptions} work-order-id={workOrderId} onclosemodal={handleCloseModal} hora-inicio={horaInicio} hora-fin={horaFin} oneventcreated={handleEventCreated}></c-full-calendar-modal>
+</template>

@@ -1,0 +1,26 @@
+<!--
+  @File Name          : MotivosAnulacion.page
+  @Description        : 
+  @Author             : ismael.ocana@s4g.es
+  @Group              : 
+  @Last Modified By   : ismael.ocana@s4g.es
+  @Last Modified On   : 17/10/2019 9:27:25
+  @Modification Log   : 
+  Ver       Date            Author                  Modification
+  1.0    17/10/2019   ismael.ocana@s4g.es     Initial Version
+-->
+<apex:page standardController="ServiceAppointment" extensions="MotivoExtension" lightningStylesheets="true">
+
+    <apex:form >
+        <apex:pageBlock title="Motivos de anulación." mode="detail">
+            <apex:pageBlockSection title="Selecciona los motivos de Anulación">
+                    <apex:selectList id="elegirMotivo" value="{!value}" size="1">
+                        <apex:selectOption itemValue="Motivo 1" itemLabel="Motivo 1"/>
+                        <apex:selectOption itemValue="Motivo 2" itemLabel="Motivo 2"/>
+                        <apex:selectOption itemValue="Motivo 3" itemLabel="Motivo 3"/>
+                    </apex:selectList> 
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

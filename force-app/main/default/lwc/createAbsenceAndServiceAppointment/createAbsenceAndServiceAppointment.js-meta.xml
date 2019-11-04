@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="urn:metadata.tooling.soap.sforce.com" fqn="createAbsenceAndServiceAppointment">
+    <apiVersion>46.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightningCommunity__Default">
+            <property name="workOrderId" type="String" default="" label="Introduce el id del Servicio"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

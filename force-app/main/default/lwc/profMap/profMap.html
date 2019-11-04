@@ -1,0 +1,30 @@
+<!--
+  @File Name          : profMap.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 30/9/2019 14:54:54
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    19/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <lightning-card title="Mapa de Citas de Servicio">
+        <template if:true={charged}>
+            <template if:true={mapMarkers}>
+                <lightning-map
+                id="renderMap"
+                map-markers = {mapMarkers}
+                zoom-level = {zoomLevel}
+                markers-title = {markersTitle}
+                show-footer = {showFooter}
+                list-view = {listView}>
+                </lightning-map> 
+            </template>
+            <template if:false={mapMarkers}>
+                No se han encontrado Citas.
+            </template>
+        </template>
+    </lightning-card>
+</template>

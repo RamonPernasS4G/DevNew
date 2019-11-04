@@ -1,0 +1,42 @@
+<!--
+  @File Name          : filtrosListado.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 25/9/2019 12:05:15
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    24/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <lightning-card title="Filtros">
+        <lightning-combobox
+            name="Gremio"
+            label="Gremio"
+            value={valueGremio}
+            placeholder="Selecciona Gremio"
+            options={optionsGremio}
+            >
+        </lightning-combobox>
+        <lightning-button variant="brand" 
+            name="Buscar"  
+            label="Buscar">
+        </lightning-button>
+    </lightning-card>
+    <lightning-card title="Orden">
+            <lightning-combobox
+                name="Gremio"
+                label="Gremio"
+                value={valueGremioOrd}
+                placeholder="Selecciona Orden"
+                options={optionsGremioOrd}
+                >
+            </lightning-combobox>
+            <lightning-button variant="brand" 
+                name="Ordenar"  
+                label="Ordenar">
+            </lightning-button>
+        </lightning-card>
+    <br/>
+</template>

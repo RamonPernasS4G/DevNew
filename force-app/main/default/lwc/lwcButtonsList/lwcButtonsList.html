@@ -1,0 +1,20 @@
+<!--
+  @File Name          : lwcButtonsList.html
+  @Description        : 
+  @Author             : ismael.ocana@s4g.es
+  @Group              : 
+  @Last Modified By   : ismael.ocana@s4g.es
+  @Last Modified On   : 31/10/2019 14:43:07
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    31/10/2019   ismael.ocana@s4g.es     Initial Version
+-->
+<template>
+    <lightning-vertical-navigation> 
+        <lightning-vertical-navigation-section label={screenName}>
+            <template for:each={metadataList} for:item="button">
+                <c-lwc-button button={button} key={button.Click_Action__c} onbuttonselected={handleButtonSelected}></c-lwc-button>
+            </template>
+        </lightning-vertical-navigation-section>
+    </lightning-vertical-navigation>
+</template>

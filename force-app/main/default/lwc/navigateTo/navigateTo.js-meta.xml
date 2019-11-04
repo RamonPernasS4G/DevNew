@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="urn:metadata.tooling.soap.sforce.com" fqn="navigateTo">
+    <apiVersion>47.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="objName" type="String" default="" label="Nombre del objeto" description="Nombre del objeto a Navegar."/>
+            <property name="filterName" type="String" default="" label="Lista de selección Id" description="Nombre api o Id de la lista de selección a Navegar."/>
+            <property name="actionName" type="String" default="" label="Acción a realizar" description="(new, edit, view)" datasource="new, edit, view"/>
+            <property name="recordId" type="String" default="" label="Id" description="Id del registro."/>
+            <property name="relationName" type="String" default="" label="Nombre de la relación" description="Nombre api de la relación. (Ej: Accounts, custom_relation__r)"/>
+            <property name="tabApiName" type="String" default="" label="Nombre de la ficha" description="Nombre api de la ficha."/>
+            <property name="url" type="String" default="" label="URL" description="Dirección a Navegar."/>
+            <property name="isFlow" type="Boolean" default="true" required="true" label="flow" description="Marcar a true si se ejecuta désde un flow. Si está desmarcado no va a funcionar en un flow."/>
+            <property name="navigation" type="String" required="true" label="Navegar a" description="Tipo de navegación disponible." datasource="Vista de lista, Página de objeto, Nuevo, Registro, Edición, Lista relacionada, Ficha, Web"/>
+            <property name="flowStep" type="String" label="Siguiente paso en flow" description="Si se rellena se ejecutará la acción elegida al navegar." datasource="Siguiente, Atrás, Finalizar"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

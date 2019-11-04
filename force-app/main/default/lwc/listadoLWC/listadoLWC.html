@@ -1,0 +1,26 @@
+<!--
+  @File Name          : listadoLWC.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 24/9/2019 11:21:43
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    24/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <div>
+        <template if:true={loaded}>
+            <lightning-card>
+                <c-filtros-listado></c-filtros-listado>
+                <template for:each={recordList} for:item="rec">
+                    <c-listado-tile record={rec} key={rec.Id}></c-listado-tile>
+                </template>
+            </lightning-card>
+        </template>
+        <template if:false={loaded}>
+            <lightning-spinner alternative-text="Loading" variant="inverse"></lightning-spinner>
+        </template>
+    </div>
+</template>

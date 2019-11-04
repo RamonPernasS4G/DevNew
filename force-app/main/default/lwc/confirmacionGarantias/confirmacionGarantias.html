@@ -1,0 +1,163 @@
+<!--
+  @File Name          : confirmacionGarantias.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 15/10/2019 9:33:34
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/10/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" style="padding:1% 3%;">
+            <lightning-combobox
+                class="validate margen"
+                message-when-value-missing="Seleccione una opción."
+                label="Grupo"
+                name="grupo"
+                value={grupoSelected}
+                options={grupos}
+                onchange={handleChangeCombos} 
+                required>
+            </lightning-combobox>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" style="padding:1% 3%;">
+            <lightning-combobox
+                class="validate margen"
+                message-when-value-missing="Seleccione una opción."
+                label="Tipo avería"
+                name="tipo"
+                value={tipoAveriaSelected}
+                options={tipos}
+                onchange={handleChangeCombos} 
+                required>
+            </lightning-combobox>
+        </div>
+    </div>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" style="padding:1% 3%;">
+            <lightning-combobox
+                class="validate margen"
+                message-when-value-missing="Seleccione una opción."
+                label="Detalle avería"
+                name="detalle"
+                value={detalleAveriaSelected}
+                options={detalles}
+                onchange={handleChangeCombos} 
+                required>
+            </lightning-combobox>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" style="padding:1% 3%;">
+            <lightning-combobox
+                class="validate margen"
+                message-when-value-missing="Seleccione una opción."
+                label="Causa avería"
+                name="causa"
+                value={causaAveriaSelected}
+                options={causas}
+                onchange={handleChangeCombos} 
+                required>
+            </lightning-combobox>
+        </div>
+    </div>
+    <template if:true={showDanos}> 
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" style="padding:1% 3%;">
+                <lightning-input 
+                    type="checkbox" 
+                    label="Daños propios"
+                    class="margen"
+                    name="urgenteCheck"
+                    value="urgenteCheck"
+                    onchange={handleDanosPropios}>
+                </lightning-input>
+            </div>
+            <template if:true={showDanosPropios}>
+                <div class="slds-col slds-size_1-of-2 slds-large-size_4-of-12" >
+                    <lightning-checkbox-group
+                        name="checkboxGroup"
+                        label="Daños propios"
+                        options={danosPropios}
+                        value={grupos}>
+                    </lightning-checkbox-group>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-large-size_4-of-12" >
+                    <lightning-checkbox-group
+                        name="checkboxGroup"
+                        label="Otros daños"
+                        options={danosPropios}
+                        value={grupos}>
+                    </lightning-checkbox-group>
+                </div>
+            </template>
+        </div>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12" style="padding:1% 3%;">
+                <lightning-input 
+                    type="checkbox" 
+                    label="Daños perjudicados"
+                    class="margen"
+                    name="urgenteCheck"
+                    value="urgenteCheck">
+                </lightning-input>
+            </div>
+        </div>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" style="padding:1% 3%;">
+                <lightning-input 
+                    type="checkbox"
+                    label="Solicitud perito"
+                    class="margen"
+                    name="peritoCheck"
+                    value="peritoCheck"
+                    onchange={handlePerito}>
+                </lightning-input>
+            </div>
+            <template if:true={showMotivosperito}>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" style="padding:1% 3%;">
+                    <lightning-combobox
+                        class="validate margen"
+                        message-when-value-missing="Seleccione una opción."
+                        label="Motivo perito"
+                        name="motivo" 
+                        value={motivoSelected}
+                        options={motivosPerito}
+                        onchange={handleChangeCombos} 
+                        required>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" style="padding:1% 3%;">
+                    <lightning-combobox
+                        class="validate margen"
+                        message-when-value-missing="Seleccione una opción."
+                        label="Submotivo perito"
+                        name="submotivo"
+                        value={submotivoSelected}
+                        options={submotivosPerito}
+                        onchange={handleChangeCombos} 
+                        required>
+                    </lightning-combobox>
+                </div>
+            </template>
+        </div>
+    </template>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12" style="padding:1% 3%;">
+            <lightning-textarea 
+                name="inputTextArea" 
+                label="" 
+                value="Ayudas" 
+                style=" height:100px !important;" 
+                read-only>
+            </lightning-textarea>
+        </div>
+    </div>
+    <div>
+        <template if:true={spinner}>
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,14 @@
+<!--
+  @File Name          : c2cAura.cmp
+  @Description        : 
+  @Author             : ismael.ocana@s4g.es
+  @Group              : 
+  @Last Modified By   : ismael.ocana@s4g.es
+  @Last Modified On   : 28/10/2019 12:42:41
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    28/10/2019   ismael.ocana@s4g.es     Initial Version
+-->
+<aura:component implements="force:lightningQuickAction">
+    <c:c2c></c:c2c> 
+</aura:component>

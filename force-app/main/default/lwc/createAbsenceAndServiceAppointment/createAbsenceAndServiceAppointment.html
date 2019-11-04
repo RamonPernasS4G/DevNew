@@ -1,0 +1,33 @@
+<!--
+  @File Name          : createAbsenceAndServiceAppointment.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 25/9/2019 11:17:31
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    23/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <template if:true={workOrderId}>
+        <lightning-card title="Introduce las fechas">
+            <div>
+                <lightning-input type="datetime" name="Fecha de inicio" label="Fecha de inicio" required></lightning-input>
+                <lightning-input type="datetime" name="Fecha de fin" label="Fecha de fin" required></lightning-input>
+                <lightning-combobox
+                    name="type"
+                    label="Tipo"
+                    value=""
+                    placeholder="Selecciona un tipo."
+                    options={options}
+                    onchange={handleChange}
+                    required
+                ></lightning-combobox>
+            </div>
+            <div>
+                <lightning-button variant="brand" label="Guardar" title="Guardar" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </lightning-card>
+    </template>
+</template>

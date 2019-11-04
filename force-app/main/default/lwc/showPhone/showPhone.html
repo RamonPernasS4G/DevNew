@@ -1,0 +1,49 @@
+<!--
+  @File Name          : showPhone.html
+  @Description        : 
+  @Author             : ismael.ocana@s4g.es
+  @Group              : 
+  @Last Modified By   : ismael.ocana@s4g.es
+  @Last Modified On   : 10/10/2019 16:13:53
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    10/10/2019   ismael.ocana@s4g.es     Initial Version
+-->
+<template>
+    <div class="slds-grid slds-wrap border">
+        <div class="slds-large-size_5-of-12 slds-small-size--1-of-3 header-column">
+            <lightning-input class="margen" label="Tipo teléfono" value={phone.typeTel} readonly></lightning-input>            
+        </div>
+        <div class="slds-large-size_5-of-12 slds-small-size--2-of-3 header-column">
+            <lightning-input class="margen" label="Num teléfono" value={phone.numTel} readonly></lightning-input>       
+        </div>
+    </div>
+    <div class="slds-grid slds-wrap border">
+        <div class="slds-large-size_4-of-12 slds-small-size--1-of-3 header-column">
+            <lightning-input class="margen" type="time" label="Hora desde" value={phone.sinceTel} readonly></lightning-input>    
+        </div>
+        <div class="slds-large-size_4-of-12 slds-small-size--2-of-3 header-column">
+            <lightning-input class="margen" type="time" label="Hora hasta" value={phone.untilTel} readonly></lightning-input>    
+        </div>
+        <div class="slds-large-size_2-of-12 slds-small-size--2-of-3 header-column">
+            <lightning-input class="margen checkboxMiddle" type="checkbox" label="SMS" checked={phone.smsValue} disabled></lightning-input>    
+        </div>
+        <div class="slds-large-size_2-of-12 slds-small-size--2-of-3 ">
+            <lightning-button-icon icon-name="utility:delete"  onclick={handleDeletePhone} alternative-text="Delete phone" ></lightning-button-icon>
+        </div>
+    </div>  
+    <!-- <div class="c-container">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <div class="header-column">
+                    <lightning-input label="Tipo teléfono" value={phone.typeTel} re></lightning-input>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <lightning-formatted-text label value={phone.numTel}></lightning-formatted-text>  
+                    </div>
+                </lightning-layout-item>
+        </lightning-layout>
+    </div>  -->
+</template>

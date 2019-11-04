@@ -1,0 +1,34 @@
+<!--
+  @File Name          : gestionTrabajos.html
+  @Description        : 
+  @Author             : ismael.ocana@s4g.es
+  @Group              : 
+  @Last Modified By   : Ramón P.
+  @Last Modified On   : 28/10/2019 11:57:00
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    16/10/2019   ismael.ocana@s4g.es     Initial Version
+-->
+<template>
+    <div>
+        <lightning-vertical-navigation >
+            <lightning-vertical-navigation-section >
+                <div class="slds-box">
+                    <lightning-vertical-navigation-item-badge onclick={handleClick} label="Ver comentarios" name="Ver comentarios" ></lightning-vertical-navigation-item-badge>
+                </div>
+                <div class="slds-box">
+                    <lightning-vertical-navigation-item-badge disabled onclick={handleClickUrgentes} label="Cambiar estado" name="Cambiar estado" ></lightning-vertical-navigation-item-badge>
+                </div> 
+                <div class="slds-box">
+                    <lightning-vertical-navigation-item-badge  label="Subir archivos" name="Subir archivos" ></lightning-vertical-navigation-item-badge>
+                </div>  
+                <div class="slds-box">
+                    <lightning-vertical-navigation-item-badge label="Ver citas relacionadas" name="Ver citas" ></lightning-vertical-navigation-item-badge>
+                </div>      
+                <div class="slds-box blue">
+                    <lightning-vertical-navigation-item-badge label="Gestor Valoraciones" name="Gestor Valoraciones" ></lightning-vertical-navigation-item-badge>
+                </div>
+            </lightning-vertical-navigation-section>
+        </lightning-vertical-navigation>
+    </div>
+</template>

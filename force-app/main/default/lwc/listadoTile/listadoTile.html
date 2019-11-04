@@ -1,0 +1,28 @@
+<!--
+  @File Name          : listadoTile.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 25/9/2019 15:10:07
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    24/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <lightning-tile type="media" label={record.AppointmentNumber}>
+        <div class="slds-box">
+            <ul class="slds-item">Servicio: {record.ParentRecord.Name}</ul>
+            <ul class="slds-item">Estado: {record.Status}</ul>
+            <ul class="slds-item">Gremio: {record.Gremio__c}</ul>
+            <ul class="slds-item">Dirección: {record.Address}</ul>
+            <ul class="slds-item">Hora Inicio: {record.SchedStartTime}</ul>
+            <ul class="slds-item">Hora Fin: {record.SchedEndTime}</ul>
+            <ul class="slds-item">Semáforo: <href></href></ul>
+        </div>        
+    </lightning-tile>
+    </br>
+    <!-- <li class="slds-item">Servicio: {record.ParentRecord.Name} </li> -->
+    <!-- <li class="slds-item">Nombre de Cliente: {record.Contact.Name}</li>  -->
+    <!-- <li class="slds-item">Teléfono de Cliente: {record.Contact.MobilePhone}</li> -->
+</template>

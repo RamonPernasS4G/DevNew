@@ -1,0 +1,22 @@
+<!--
+  @File Name          : showPhones.html
+  @Description        : 
+  @Author             : ismael.ocana@s4g.es
+  @Group              : 
+  @Last Modified By   : ismael.ocana@s4g.es
+  @Last Modified On   : 10/10/2019 14:31:13
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    10/10/2019   ismael.ocana@s4g.es     Initial Version
+-->
+<template>
+    <template if:true={show}>
+        <lightning-card title="Listado de teléfonos">
+
+            <template for:each={phonesList} for:item="phone">
+                <c-show-phone phone={phone} key={phone.modstamp} ondeletephone={handleDeletePhone}></c-show-phone>
+            </template>
+            
+        </lightning-card>
+    </template>
+</template>

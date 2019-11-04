@@ -1,0 +1,230 @@
+<!--
+  @File Name          : danosPerjudicados.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ismael.ocana@s4g.es
+  @Last Modified On   : 29/10/2019 10:00:03
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/10/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <div class="slds-grid slds-wrap border">
+
+        <div class="slds-large-size_12-of-12 slds-small-size--1-of-1">
+            <lightning-combobox
+                class="margen"
+                name="Tipo de tercero"
+                label="Tipo de tercero"
+                placeholder="Selecciona un tipo de tercero"
+                options={terceroCombo}
+                onchange={handleTercero}
+                required>
+            </lightning-combobox>
+        </div>       
+    </div>
+    <template if:true={showPerjudicado}>
+        <div class="slds-grid slds-wrap border">
+                <div class="slds-large-size_12-of-12 slds-small-size--1-of-1">
+                    <lightning-combobox
+                        class="margen"
+                        name="Perjudicado"
+                        label="Perjudicado"
+                        placeholder="Selecciona un perjudicado"
+                        options={perjudicadoCombo}
+                        required>
+                    </lightning-combobox>
+                </div>       
+        </div>
+    </template>
+    <template if:true={showCompania}>
+        <div class="slds-grid slds-wrap border">
+            <div class="slds-large-size_12-of-12 slds-small-size--1-of-1">
+                <lightning-combobox
+                    class="margen"
+                    name="Compañía"
+                    label="Compañía"
+                    placeholder="Selecciona una Compañía"
+                    options={companiaCombo}
+                    required>
+                </lightning-combobox>
+            </div>       
+        </div>
+    </template>
+    <div class="slds-grid slds-wrap border">
+        <div class="slds-large-size_6-of-12 slds-small-size--1-of-2 ">
+            <lightning-input
+                class="margen"
+                name="Nombre"
+                label="Nombre"
+            ></lightning-input> 
+        </div>
+        <div class="slds-large-size_6-of-12 slds-small-size--1-of-2 ">
+            <lightning-input
+                class="margen"
+                name="Apellidos"
+                label="Apellidos"
+            ></lightning-input> 
+        </div>
+    </div>
+    <div class="slds-grid slds-wrap border">
+        <div class="slds-large-size_6-of-12 slds-small-size--1-of-1 ">
+            <lightning-input
+                class="margen"
+                name="Dirección"
+                label="Dirección"
+            ></lightning-input> 
+        </div>
+        <div class="slds-large-size_6-of-12 slds-small-size--1-of-1 ">
+            <lightning-input
+                class="margen"
+                name="CP"
+                label="CP"
+            ></lightning-input> 
+        </div>
+    </div>
+    <div class="slds-grid slds-wrap border">
+        <div class="slds-large-size_6-of-12 slds-small-size--1-of-1 ">
+            <lightning-input
+                class="margen"
+                name="Población"
+                label="Población"
+            ></lightning-input> 
+        </div>
+        <div class="slds-large-size_6-of-12 slds-small-size--1-of-1 ">
+            <lightning-input
+                class="margen"
+                name="Provincia"
+                label="Provincia"
+            ></lightning-input> 
+        </div>
+    </div>
+
+    <div class="slds-grid slds-wrap border">
+        <div class="slds-large-size_3-of-12 slds-small-size--1-of-3 ">
+            <lightning-combobox
+                class="margen"
+                name="Tipo documento"
+                label="Tipo de documento"
+                placeholder="Selecciona un tipo"
+                options={tipoCombo}
+                >
+            </lightning-combobox>   
+        </div>
+        <div class="slds-large-size_9-of-12 slds-small-size--2-of-3 ">
+            <lightning-input
+                class="margen"
+                name="Num Documento"
+                label="Num Documento"
+            ></lightning-input> 
+        </div>
+    </div>
+    <div class="slds-grid slds-wrap border">
+        <div class="slds-large-size_3-of-12 slds-small-size--1-of-3 ">
+            <lightning-combobox
+                class="margen"
+                name="Tipo teléfono"
+                label="Tipo teléfono"
+                placeholder="Selecciona un tipo"
+                options={telefonoCombo}
+                onchange={handleTelefonoChange}
+                value={typeTel}
+                >
+            </lightning-combobox>   
+        </div>
+        <div class="slds-large-size_9-of-12 slds-small-size--2-of-3 ">
+            <lightning-input
+                class="margen"
+                name="Num teléfono"
+                label="Num teléfono"
+                onchange={handleTelefonoChange}
+                value={numTel}
+            ></lightning-input> 
+        </div>
+    </div>     
+    <template if:true={showDates}>
+        <div class="slds-grid slds-wrap border">
+            <div class="slds-large-size_4-of-12 slds-small-size--1-of-1">
+                <lightning-input
+                    class="margen"
+                    type="time"
+                    name="Hora desde"
+                    label="Hora desde"
+                    onchange={handleTelefonoChange}
+                    value={sinceTel}
+                ></lightning-input>
+            </div>   
+            <div class="slds-large-size_4-of-12 slds-small-size--1-of-1">
+                <lightning-input
+                    class="margen"
+                    type="time"
+                    name="Hora hasta"
+                    label="Hora hasta"
+                    onchange={handleTelefonoChange}
+                    value={untilTel}
+                ></lightning-input>
+            </div>      
+            <div class="slds-large-size_2-of-12 slds-small-size--1-of-1">
+                <lightning-input type="checkbox" label="SMS" name="SMS" class="margen checkboxMiddle" onchange={handleTelefonoChange} value={smsValue}></lightning-input>
+            </div>
+            <div class="slds-large-size_2-of-12 slds-small-size--1-of-1">
+                <lightning-button-icon icon-name="utility:add"  onclick={handleAddPhone} class="buttonMiddle"  alternative-text="Add phone" ></lightning-button-icon>
+            </div>   
+        </div>
+    </template>
+    <div>
+        <c-show-phones phones-list={phonesList} ondeletephone={handleDeletePhone} show={show}></c-show-phones>
+    </div>
+
+    <div class="slds-grid slds-wrap slds-box-small-size">
+        <div class="slds-large-size_6-of-12 slds-small-size_1-of-1">
+            <lightning-checkbox-group
+                name="Daños propios"
+                label="Daños propios"
+                class="margen"
+                options={danosCombo}
+                value={danosValue}>
+            </lightning-checkbox-group>
+        </div>
+        <div class="slds-large-size_6-of-12 slds-small-size_1-of-1">
+            <lightning-checkbox-group
+                name="Otros daños"
+                label="Otros daños"
+                class="margen"
+                options={danosCombo}
+                value={danosValue}>
+            </lightning-checkbox-group>
+        </div>        
+    </div>
+
+    <div class="slds-grid slds-wrap slds-box-small-size">
+        <div class="slds-large-size_12-of-12 slds-small-size_1-of-1">
+            <lightning-textarea class="margen" value={ayuda} label="Ayuda" readonly>
+            </lightning-textarea>
+        </div>
+    </div>
+    <div class="slds-align_absolute-center">
+        <lightning-button
+            variant="brand"
+            label="Nuevo perjudicado"
+            title="Guardar"
+            onclick={handleClick}
+            class="slds-m-left_x-small"
+        ></lightning-button>
+        <br></br>
+    </div>
+
+    <p>----- Enlace -----</p>
+
+    
+    <div onclick={handleRecord}> 
+        Link a Record
+    </div>
+    <div onclick={handleRelatedList}> 
+        Link a Related List
+    </div>
+
+    <c-navigate-to></c-navigate-to>
+
+</template>

@@ -1,0 +1,54 @@
+<!--
+  @File Name          : CtiPopTest.page
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 23/9/2019 15:58:43
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    23/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<apex:page >
+   <html>
+      <head>
+         <apex:includeLightning />
+      </head>
+      <body class="slds-scope">
+         <div id="flowContainer" />
+         <script>
+            var statusChange = function (event) {
+               if(event.getParam("status") === "FINISHED") {
+                  console.log('Finalizado');
+                   // Flow finalizado
+ 					
+                   var outputVariables = event.getParam("outputVariables");
+                  var key;
+                  for(key in outputVariables) {
+                     if(outputVariables[key].name === "myOutput") {
+                        // Aqui podemos meter algo si necesitamos trabajar con la salida del flow
+                     }
+                  }
+               }
+            };
+            $Lightning.use("c:CtiAuraTest", function() {
+               $Lightning.createComponent("lightning:flow", {"onstatuschange":statusChange},
+                  "flowContainer",
+                  function (component) {
+                      var inputVariables = [
+                        {
+                           name : 'companyId',
+                           type : 'String',
+                           value : '1018'
+                        }
+                     ];
+
+                     component.startFlow("Busqueda_de_Cliente_bueno",inputVariables);
+                     //component.startFlow("Busqueda_de_Cliente_bueno");
+                  }
+               );
+            });
+         </script>
+      </body>
+   </html>
+</apex:page>

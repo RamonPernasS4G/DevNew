@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="displayRecordRelatedField">
+    <apiVersion>45.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="fieldToDisplay" type="String" label="Field To Display" placeholder="Name" description="Enter the field you want to display"/>
+            <property name="objectApiName" type="String" label="Object API Name" placeholder="Producto__c" description="Enter the API name of the object that contains the field"/>
+            <property name="title" type="String" label="Title" placeholder="Ayuda riesgo" description="Enter the title for the card"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

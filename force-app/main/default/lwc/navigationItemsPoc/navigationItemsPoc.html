@@ -1,0 +1,40 @@
+<!--
+  @File Name          : navigationItemsPoc.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ismael.ocana@s4g.es
+  @Last Modified On   : 16/10/2019 15:56:05
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/10/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <div class="slds-m-vertical_medium">
+        <h1 class="slds-text-heading_small">Listado</h1> 
+    </div>
+    
+    <div>
+        <lightning-vertical-navigation>
+            <lightning-vertical-navigation-section>
+                <div class="slds-box red">
+                    <lightning-vertical-navigation-item-badge onclick={handleClick} label="Citas de hoy" name="Citas de hoy" badge-count="3"></lightning-vertical-navigation-item-badge>
+                </div>
+                <div class="slds-box">
+                    <lightning-vertical-navigation-item-badge onclick={handleClickUrgentes} label="Citas urgentes" name="Citas urgentes" badge-count="0"></lightning-vertical-navigation-item-badge>
+                </div> 
+                <div class="slds-box">
+                    <lightning-vertical-navigation-item-badge label="Servicios sin cita" name="Servicios sin cita" badge-count="2"></lightning-vertical-navigation-item-badge>
+                </div>       
+                <div class="slds-box">
+                    <lightning-vertical-navigation-item-badge onclick={handleLLamadasHoy} label="Mis llamadas de hoy" name="Mis llamadas de hoy" ></lightning-vertical-navigation-item-badge>
+                </div>           
+                <div class="slds-box">
+                    <lightning-vertical-navigation-item-badge onclick={handleCSV} label="Descargar mis citas de hoy" name="Descargar mis citas de hoy" ></lightning-vertical-navigation-item-badge>
+                </div>   
+            </lightning-vertical-navigation-section>
+        </lightning-vertical-navigation>
+    </div>
+    <c-navigate-to></c-navigate-to>
+    <c-generar-c-s-v records={records} nombre={nombre}></c-generar-c-s-v>
+</template>

@@ -1,0 +1,5 @@
+<aura:component implements="force:hasRecordId,force:lightningQuickAction">
+    <aura:attribute name="recordId" type="String" />
+
+    <c:uploadFileLWC recordId="{!v.recordId}"></c:uploadFileLWC>
+</aura:component>

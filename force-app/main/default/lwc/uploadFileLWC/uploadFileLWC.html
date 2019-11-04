@@ -1,0 +1,46 @@
+<!--
+  @File Name          : uploadFileLWC.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 3/10/2019 12:04:49
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    26/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <div class="slds-box">
+        <lightning-file-upload
+            label="Fotos antes"
+            name="file antes"
+            record-id={recordId}
+            onuploadfinished={handleUploadFinishedAntes}
+            multiple>
+        </lightning-file-upload>
+        <template if:true={antesIds}>
+            <template for:each={antesIds} for:item="doc">
+                <img src={doc.url} key={doc.Id} ></img>
+            </template>
+        </template>
+    </div>
+    <div class="slds-box">
+        <lightning-file-upload   
+            label="Fotos durante"
+            name="file durante"
+            record-id={recordId}
+            onuploadfinished={handleUploadFinishedDurante}
+            multiple>
+        </lightning-file-upload>
+    </div>
+    <div class="slds-box">
+        <lightning-file-upload
+            label="Fotos después"
+            name="file despues"
+            record-id={recordId}
+            onuploadfinished={handleUploadFinishedDespues}
+            multiple>
+        </lightning-file-upload>
+    </div>
+
+</template>

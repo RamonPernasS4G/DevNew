@@ -1,0 +1,52 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global" controller="SearchClientsApexController">
+ 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:attribute access="global" name="companyId" type="String" default=""></aura:attribute>
+    <aura:attribute access="global" name="companyName" type="String" default=""></aura:attribute>
+    <aura:attribute access="global" name="accList" type="List" default=""></aura:attribute>
+    <aura:attribute access="global" name="columns" type="List" default=""></aura:attribute>
+    <aura:attribute access="global" name="clientId" type="String" default=""></aura:attribute>
+    <aura:attribute access="global" name="identificador" type="String" default=""></aura:attribute>
+
+    <aura:attribute access="global" name="name" type="String" default=""></aura:attribute>
+    <aura:attribute access="global" name="address" type="String" default=""></aura:attribute>
+
+    <aura:attribute access="global" name="tipo" type="String" default=""></aura:attribute>
+    <aura:attribute access="global" name="valor" type="String" default=""></aura:attribute>
+
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'Número de documento', 'value': 'Número de documento'},
+    {'label': 'Dirección', 'value': 'Dirección'},
+    {'label': 'Número de póliza', 'value': 'Número de póliza'}
+    ]"/>
+
+    <lightning:card title="RESULTADO BÚSQUEDA CLIENTES">
+
+        <h1>Filtro de búsqueda</h1>
+
+        <div>
+           
+            <lightning:combobox name="progress" label="Tipo Identificador" value="Número de documento" options="{! v.options }"  />
+            <lightning:input label="Valor"  value="{!v.valor}"/>
+            <br />
+            <div class="slds-grid slds-grid_align-end">
+                <div class="slds-col">
+                    <lightning:button variant="brand" label="Buscar"/>
+                </div>
+            </div>
+
+            <!-- <lightning-layout class="slds-grid slds-align_absolute-center">
+                <lightning-layout-item padding="around-small" class="slds-col">
+                    <div class="header-column">
+                        <p class="field-title" title="Valor"></p>
+                           
+                    </div>
+                </lightning-layout-item >
+            </lightning-layout> -->
+
+        </div>
+
+        <c:s4GTable records="{!v.accList}" columns="{!v.columns}" onselectedrow="{!c.handleSelectedRow}"></c:s4GTable>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,140 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/busquedaCliente": [
+                "busquedaCliente/busquedaCliente.js"
+            ],
+            "c/c2c": [
+                "c2c/c2c.js"
+            ],
+            "c/callphone": [
+                "callphone/callphone.js"
+            ],
+            "c/confirmacionGarantias": [
+                "confirmacionGarantias/confirmacionGarantias.js"
+            ],
+            "c/createAbsenceAndServiceAppointment": [
+                "createAbsenceAndServiceAppointment/createAbsenceAndServiceAppointment.js"
+            ],
+            "c/createCommentLWC": [
+                "createCommentLWC/createCommentLWC.js"
+            ],
+            "c/danosPerjudicados": [
+                "danosPerjudicados/danosPerjudicados.js"
+            ],
+            "c/displayRecordRelatedField": [
+                "displayRecordRelatedField/displayRecordRelatedField.js"
+            ],
+            "c/filtrosListado": [
+                "filtrosListado/filtrosListado.js"
+            ],
+            "c/flowNext": [
+                "flowNext/flowNext.js"
+            ],
+            "c/fullCalendar": [
+                "fullCalendar/fullCalendar.js"
+            ],
+            "c/fullCalendarLWC": [
+                "fullCalendarLWC/fullCalendarLWC.js"
+            ],
+            "c/fullCalendarModal": [
+                "fullCalendarModal/fullCalendarModal.js"
+            ],
+            "c/generarCSV": [
+                "generarCSV/generarCSV.js"
+            ],
+            "c/gestionTrabajos": [
+                "gestionTrabajos/gestionTrabajos.js"
+            ],
+            "c/gestionTrabajosSA": [
+                "gestionTrabajosSA/gestionTrabajosSA.js"
+            ],
+            "c/homeMenu": [
+                "homeMenu/homeMenu.js"
+            ],
+            "c/listadoLWC": [
+                "listadoLWC/listadoLWC.js"
+            ],
+            "c/listadoTile": [
+                "listadoTile/listadoTile.js"
+            ],
+            "c/listadosComp": [
+                "listadosComp/listadosComp.js"
+            ],
+            "c/lwcButton": [
+                "lwcButton/lwcButton.js"
+            ],
+            "c/lwcButtons": [
+                "lwcButtons/lwcButtons.js"
+            ],
+            "c/lwcButtonsList": [
+                "lwcButtonsList/lwcButtonsList.js"
+            ],
+            "c/mapFilters": [
+                "mapFilters/mapFilters.js"
+            ],
+            "c/navigateTo": [
+                "navigateTo/navigateTo.js"
+            ],
+            "c/navigateToUtils": [
+                "navigateToUtils/navigateToUtils.js"
+            ],
+            "c/navigationItemsPoc": [
+                "navigationItemsPoc/navigationItemsPoc.js"
+            ],
+            "c/offlineCreateComment": [
+                "offlineCreateComment/offlineCreateComment.js"
+            ],
+            "c/policyDetail": [
+                "policyDetail/policyDetail.js"
+            ],
+            "c/profMap": [
+                "profMap/profMap.js"
+            ],
+            "c/pruebaJesus": [
+                "pruebaJesus/pruebaJesus.js"
+            ],
+            "c/pubsub": [
+                "pubsub/pubsub.js"
+            ],
+            "c/s4GTable": [
+                "s4GTable/s4GTable.js"
+            ],
+            "c/s4GUtils": [
+                "s4GUtils/s4GUtils.js"
+            ],
+            "c/serviceAppointmentMap": [
+                "serviceAppointmentMap/serviceAppointmentMap.js"
+            ],
+            "c/showComments": [
+                "showComments/showComments.js"
+            ],
+            "c/showPhone": [
+                "showPhone/showPhone.js"
+            ],
+            "c/showPhones": [
+                "showPhones/showPhones.js"
+            ],
+            "c/testButton": [
+                "testButton/testButton.js"
+            ],
+            "c/testOffline": [
+                "testOffline/testOffline.js"
+            ],
+            "c/uploadFileLWC": [
+                "uploadFileLWC/uploadFileLWC.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}

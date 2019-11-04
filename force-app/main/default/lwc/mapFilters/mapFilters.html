@@ -1,0 +1,103 @@
+<!--
+  @File Name          : mapFilters.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 30/9/2019 12:04:28
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    30/9/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <lightning-card>
+        <div class="c-container">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_8-of-12">
+                    <div class="header-column">
+                        <p class="field-title" title="Urgente"></p>
+                        <div onkeyup={handleKeyUp}>
+                            <lightning-input type="toggle" label = "Urgente" value="" onchange={handleChange} name="filtro.Urgente"></lightning-input>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_8-of-12">
+                    <template if:true={GremioPicklistValues.data}>
+                        <lightning-combobox
+                            name="filtro.Gremio"
+                            label="Gremio"
+                            value={comboValue}
+                            placeholder="Selecciona un Gremio"
+                            options={GremioPicklistValues.data.values}
+                            onchange={handleChangeCombo}
+                            >
+                        </lightning-combobox> 
+                    </template>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_8-of-12">
+                    <div class="header-column">
+                        <p class="field-title" title="Fecha Desde"></p>
+                        <div onkeyup={handleKeyUp}>
+                            <lightning-input type="date" label = "Desde" value="" onchange={handleChange} name="filtro.Desde"></lightning-input>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_8-of-12">
+                    <div class="header-column">
+                        <p class="field-title" title="Fecha Hasta"></p>
+                        <div onkeyup={handleKeyUp}>
+                            <lightning-input type="date" label = "Hasta" value="" onchange={handleChange} name="filtro.Hasta"></lightning-input>
+                        </div>
+                    </div>                   
+                </div>
+            </div>
+            <lightning-layout class="slds-grid slds-grid_align-end" horizontal-align="space">
+                <lightning-layout-item padding="around-small" class="slds-col">
+                    <lightning-button variant="brand" label={searchLabel} title="Search action" icon-name={searchIconName} onclick={handleSearch} ></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <!-- <lightning-layout class="slds-grid slds-align_absolute-center">
+                    <lightning-layout-item padding="around-small" class="slds-col">
+                            <div class="header-column">
+                                <p class="field-title" title="Urgente"></p>
+                                <div onkeyup={handleKeyUp}>
+                                    <lightning-input type="toggle" label = "Urgente" value="" onchange={handleChange} name="filtro.Urgente"></lightning-input>
+                                </div>
+                            </div>
+                    </lightning-layout-item >
+                    <lightning-layout-item padding="around-small" class="slds-col">
+                        <div class="header-column">
+                            <template if:true={GremioPicklistValues.data}>
+                                <lightning-combobox
+                                    name="filtro.Gremio"
+                                    label="Gremio"
+                                    value=""
+                                    placeholder="Selecciona un Gremio"
+                                    options={GremioPicklistValues.data.values}
+                                    >
+                                </lightning-combobox> 
+                            </template>
+                        </div>
+                    </lightning-layout-item>
+                    <br></br>
+                    <lightning-layout-item padding="around-small" class="slds-col">
+                        <div class="header-column">
+                            <p class="field-title" title="Desde"></p>
+                            <div onkeyup={handleKeyUp}>
+                                <lightning-input type="date" label = "Desde" value="" onchange={handleChange} name="filtro.Desde"></lightning-input>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" class="slds-col">  
+                        <div class="header-column">
+                            <p class="field-title" title="Hasta"></p>
+                            <div onkeyup={handleKeyUp}>
+                                <lightning-input type="date" label = "Hasta" value="" onchange={handleChange} name="filtro.Hasta"></lightning-input>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+            </lightning-layout> -->
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<!--
+  @File Name          : gestionTrabajoAura.cmp
+  @Description        : 
+  @Author             : ismael.ocana@s4g.es
+  @Group              : 
+  @Last Modified By   : ismael.ocana@s4g.es
+  @Last Modified On   : 16/10/2019 18:11:41
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    16/10/2019   ismael.ocana@s4g.es     Initial Version
+-->
+<aura:component implements="force:lightningQuickAction,force:hasRecordId">
+    <c:gestionTrabajos></c:gestionTrabajos>
+</aura:component>

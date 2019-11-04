@@ -1,0 +1,56 @@
+<!--
+  @File Name          : fullCalendarModal.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 7/10/2019 11:47:27
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    1/10/2019   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <template if:true={showModal}>   
+        <lightning:messages></lightning:messages>
+        
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning-button-icon 
+                        class="slds-button slds-button_icon slds-modal__close" 
+                        variant="inverse"
+                        icon-name="utility:close" 
+                        alternative-text="Close" 
+                        onclick={handlerClose}
+                    ></lightning-button-icon> 
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{objType}</h2>
+                </header>
+                <template if:false={loading}>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <!-- <div onkeyup={handleKeyUp}> -->
+                            <lightning-input onchange={handleKeyUp} class="input" type="datetime" name="Fecha de inicio" label="Fecha de inicio" value={horaInicio}></lightning-input>
+                        <!-- </div> -->
+                        <!-- <div onkeyup={handleKeyUp}> -->
+                            <lightning-input onchange={handleKeyUp} class="input" type="datetime" name="Fecha de fin" label="Fecha de fin" value={horaFin}></lightning-input>
+                        <!-- </div> -->
+                        <!-- <div onkeyup={handleKeyUp}> -->
+                            <lightning-textarea onchange={handleKeyUp} class="input" name="Descripción" label="Descripción" value={description} ></lightning-textarea>
+                        <!-- </div>
+                        <div onkeyup={handleKeyUp}> -->
+                            <lightning-button class="input" variant="brand" type="submit" name="save" label="Guardar" onclick={handlerSave}></lightning-button>
+                        <!-- </div> -->
+                        
+                    </div>
+                </template>
+                <template if:true={loading}>
+                    <lightning-spinner size="medium" ></lightning-spinner>
+                </template>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open">
+            
+        </div>
+
+    </template>
+</template>

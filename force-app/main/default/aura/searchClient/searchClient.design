@@ -1,0 +1,14 @@
+<design:component >
+    <design:attribute name="companyId" label="Compañia" description="Id de la Compañía aseguradora." required="false"/>
+    <design:attribute name="companyName" label="Compañia Nombre" description="Nombre de la Compañía aseguradora." required="false"/>
+    <design:attribute name="identificador" label="Identificador de cliente" description="Identificador de cliente." required="false"/>
+
+    <design:attribute name="clientId" label="Cliente seleccionado" description="Id del cliente seleccionado." />
+
+    <design:attribute name="name" label="Nombre cliente seleccionado"  />
+
+    <design:attribute name="address" label="Direccion seleccionada"  />
+    <design:attribute name="tipo" label="Tipo"  />
+    <design:attribute name="valor" label="Valor"  /> 
+
+</design:component>
