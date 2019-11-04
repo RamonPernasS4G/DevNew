@@ -73,7 +73,7 @@ export default class Callphone extends LightningElement {
         })
         .catch(error => {
             JSON.stringify('error = ' + error);
-            console.log('Task no created');
+            console.log('Task no created 2');
         });
     }
 }
